@@ -1,0 +1,1 @@
+This is spring boot microservice, which will connect to twitter, filter messages a search string and publish them on a kafka topic.
