@@ -7,13 +7,14 @@ Pre-requisite:
 4) Install Apache Kafka v2.12 (or latest)
 
 Steps to create Kafka Topics: Please note, Following Kafka topics are not required to be created manually, before running application (steps are for windows os).
-```
 1) Go to kafka  installation location (C:\kafka_2.12\) and create empty folder - data. And under that new empty folder below 2 folders. 
+```
 kafka
 zookeeper
+```
  
 2) Create "zookeeper.properties" file with below content in kafka installation location (C:\kafka_2.12\config). 
-
+```
 # the directory where the snapshot is stored.
 dataDir=C:/kafka_2.12/data/zookeeper
 # the port at which the clients will connect
@@ -33,13 +34,18 @@ log.dirs=C:/kafka_2.12/data/kafka
 ```
 
 4) Start Zookeeper in one command line: 
+```
 C:\kafka_2.12\bin\windows\zookeeper-server-start.bat config\zookeeper.properties
+```
 
 5) Start Kafka in another command line: 
+```
 C:\kafka_2.12\bin\windows\kafka-server-start.bat config\server.properties
+```
 
 6) Create below 4 topics
 
+```
 C:\kafka_2.12\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic dpinc
 C:\kafka_2.12\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic partitioned
 C:\kafka_2.12\bin\windows\kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic filtered
